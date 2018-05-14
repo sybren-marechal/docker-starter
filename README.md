@@ -1,6 +1,10 @@
+---
+description: we will learn how to setup and connect a docker cloud
+---
+
 # docker cloud for starters
 
-## Getting Super Powers
+## 
 
 Becoming a super hero is a fairly straight forward process:
 
