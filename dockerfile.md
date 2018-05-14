@@ -10,7 +10,7 @@ This page describes the commands you can use in a `Dockerfile`. When you are don
 
 ![](.gitbook/assets/screen-shot-2018-05-14-at-23.31.25.png)
 
-Create an empty file called `Dockerfile`:
+Create an empty file in your project called `Dockerfile`:
 
 ```text
 touch Dockerfile
@@ -92,6 +92,17 @@ CMD [ "npm", "start" ]
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+## dockerfiles
+
+Every dockerfile is simular to the working process of your project.   
+You just saw an example for a node application but every project has a personal setup.
+
+![Dockerfile](.gitbook/assets/screen-shot-2018-05-14-at-23.55.54.png)
+
+![Dockerfile](.gitbook/assets/screen-shot-2018-05-14-at-23.55.35.png)
+
+![Dockerfile](.gitbook/assets/screen-shot-2018-05-14-at-23.31.25%20%281%29.png)
 
 
 
