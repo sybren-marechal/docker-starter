@@ -1,4 +1,4 @@
-# docker introduction
+# Docker introduction
 
 ## you can find a nice introduction of docker on [this](https://vives.gitbook.io/docker/) gitbook
 

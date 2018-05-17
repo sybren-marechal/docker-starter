@@ -1,10 +1,11 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [docker introduction](docker-introduction.md)
-* [installation Docker](installation-docker.md)
-* [dockerfile](dockerfile.md)
+* [Docker introduction](docker-introduction.md)
+* [Installation Docker](installation-docker.md)
+* [Dockerfile](dockerfile.md)
 * [Containers](containers.md)
+* Docker Cloud
 * [setup Docker Cloud](setup-docker-cloud.md)
 * [sources](sources.md)
 

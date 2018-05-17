@@ -53,56 +53,42 @@ thermostat         latest              326387cea398
 
 ## Run the app
 
-Run the app, mapping your machine's port 4000 to the container's published port 80 using `-p`:
+Run the app, 
 
 ```text
-docker run -it thermostat
+docker run thermostat
 ```
 
-You should see a message that Python is serving your app at `http://0.0.0.0:80`. But that message is coming from inside the container, which doesn't know you mapped port 80 of that container to 4000, making the correct URL `http://localhost:4000`.
+Right now, you got your default output from what you have configured in your`Dockerfile.`
 
-Go to that URL in a web browser to see the display content served up on a web page.
-
-![Hello World in browser](https://github.com/sybren-marechal/docker-starter/tree/86015b8f63a88424652425fd3d8071ca18d612a9/images/app-in-browser.png)
-
-> **Note**: If you are using Docker Toolbox on Windows 7, use the Docker Machine IP instead of `localhost`. For example, [http://192.168.99.100:4000/](http://192.168.99.100:4000/). To find the IP address, use the command `docker-machine ip`.
-
-You can also use the `curl` command in a shell to view the same content.
+{% code-tabs %}
+{% code-tabs-item title="Dockerfile" %}
+```text
+CMD ["ruby", "application.rb","23","C"]
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ```text
-$ curl http://localhost:4000
+{
+  "heating": "off",
+  "airco": "on"
+}
+heating: false
+cooling: true
 
-<h3>Hello World!</h3><b>Hostname:</b> 8fc990912a14<br/><b>Visits:</b> <i>cannot connect to Redis, counter disabled</i>
 ```
 
-This port remapping of `4000:80` is to demonstrate the difference between what you `EXPOSE` within the `Dockerfile`, and what you `publish` using `docker run -p`. In later steps, we just map port 80 on the host to port 80 in the container and use `http://localhost`.
-
-Hit `CTRL+C` in your terminal to quit.
-
-> On Windows, explicitly stop the container
->
-> On Windows systems, `CTRL+C` does not stop the container. So, first type `CTRL+C` to get the prompt back \(or open another shell\), then type `docker container ls` to list the running containers, followed by `docker container stop <Container NAME or ID>` to stop the container. Otherwise, you get an error response from the daemon when you try to re-run the container in the next step.
-
-Now let's run the app in the background, in detached mode:
+To add a diffrent temperature you can simple do this
 
 ```text
-docker run -d -p 4000:80 friendlyhello
+docker run thermostat ruby application.rb 9 C
 ```
 
-You get the long container ID for your app and then are kicked back to your terminal. Your container is running in the background. You can also see the abbreviated container ID with `docker container ls` \(and both work interchangeably when running commands\):
+you can open you bash even in the thermostat project with
 
 ```text
-$ docker container ls
-CONTAINER ID        IMAGE               COMMAND             CREATED
-1fa4ab2cf395        friendlyhello       "python app.py"     28 seconds ago
-```
-
-Notice that `CONTAINER ID` matches what's on `http://localhost:4000`.
-
-Now use `docker container stop` to end the process, using the `CONTAINER ID`, like so:
-
-```text
-docker container stop 1fa4ab2cf395
+docker run thermostat bash
 ```
 
 ## Share your image
@@ -136,7 +122,7 @@ docker tag image username/repository:tag
 For example:
 
 ```text
-docker tag friendlyhello john/get-started:part2
+docker tag thermostat sybrenmarechal/thermostat
 ```
 
 Run [docker image ls](https://github.com/sybren-marechal/docker-starter/tree/86015b8f63a88424652425fd3d8071ca18d612a9/engine/reference/commandline/image_ls/README.md) to see your newly tagged image.
@@ -161,12 +147,20 @@ docker push username/repository:tag
 
 Once complete, the results of this upload are publicly available. If you log in to [Docker Hub](https://hub.docker.com/), you see the new image there, with its pull command.
 
+![](.gitbook/assets/screen-shot-2018-05-17-at-17.33.21.png)
+
 ### Pull and run the image from the remote repository
 
 From now on, you can use `docker run` and run your app on any machine with this command:
 
 ```text
-docker run -p 4000:80 username/repository:tag
+docker run username/repository:tag
+```
+
+example:
+
+```text
+docker run sybrenmarechal/thermostat:latest
 ```
 
 If the image isn't available locally on the machine, Docker pulls it from the repository.
