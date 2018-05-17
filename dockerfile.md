@@ -31,12 +31,18 @@ Next we create a directory to hold the application code inside the image, this w
 WORKDIR /usr/src/app
 ```
 
+the following code **Copies files and directories** from the host file system to the image. 
+
 ```text
-COPY Gemfile Gemfile.lock
-./COPY thermostat.gemspec thermostaat_sybren_marechal.gemspec
+COPY Gemfile Gemfile.lock ./
+COPY thermostat.gemspec thermostat.gemspec
 ```
 
-dzdzzd
+{% hint style="danger" %}
+you will need to change `thermostat.gemspec` to your own .`gemspec` filename.
+{% endhint %}
+
+ "RUN" Allows the **execution of commands in the shell**. This is for example used to install applications, libraries or other dependencies. Each `RUN` instruction will execute any commands in a new layer on top of the current image and commit the results
 
 ```text
 RUN bundle install
@@ -49,41 +55,13 @@ To bundle your app's source code inside the Docker image, use the `COPY` instruc
 COPY . .
 ```
 
-Last but not least, define the command to run your app using `CMD` which defines your runtime. Here we will use the basic `npm start` which will run `node server.js` to start your server:
+Last but not least, define the command to run your app using `CMD` which defines your runtime. 
 
 ```text
-    CMD ["ruby", "application.rb","23","C"]
+   CMD ["ruby", "application.rb","23","C"]
 ```
-
-
 
 Your `Dockerfile` should now look like this:
-
-{% code-tabs %}
-{% code-tabs-item title="Dockerfile" %}
-```text
-FROM node:carbon
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
-
-# Bundle app source
-COPY . .
-
-EXPOSE 8080
-CMD [ "npm", "start" ]
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 {% code-tabs %}
 {% code-tabs-item title="Dockerfile" %}
