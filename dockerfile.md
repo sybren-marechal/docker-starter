@@ -10,8 +10,6 @@ This page describes the commands you can use in a `Dockerfile`. When you are don
 
 Create an empty file in your project called `Dockerfile`:
 
-
-
 ```text
 touch Dockerfile
 ```
@@ -89,6 +87,4 @@ You just saw an example for a node application but every project has a personal 
 ![Dockerfile](.gitbook/assets/screen-shot-2018-05-14-at-23.55.35.png)
 
 ![Dockerfile](.gitbook/assets/screen-shot-2018-05-14-at-23.31.25%20%281%29.png)
-
-
 
