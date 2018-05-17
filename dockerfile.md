@@ -8,7 +8,15 @@ This page describes the commands you can use in a `Dockerfile`. When you are don
 
 ## Creating a dockerfile example for node 
 
-![](.gitbook/assets/screen-shot-2018-05-14-at-23.31.25.png)
+```text
+FROM ruby:2.5
+# throw errors if Gemfile has been modified since Gemfile.lockRUN bundle config --global frozen 1
+WORKDIR /usr/src/app
+COPY Gemfile Gemfile.lock ./COPY thermostat.gemspec thermostaat_sybren_marechal.gemspecRUN bundle install
+COPY . .
+CMD ["ruby application.rb 23 C"]
+
+```
 
 Create an empty file in your project called `Dockerfile`:
 
