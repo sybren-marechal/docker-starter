@@ -56,7 +56,7 @@ thermostat         latest              326387cea398
 Run the app, mapping your machine's port 4000 to the container's published port 80 using `-p`:
 
 ```text
-docker run -p 4000:80 thermostat
+docker run -it thermostat
 ```
 
 You should see a message that Python is serving your app at `http://0.0.0.0:80`. But that message is coming from inside the container, which doesn't know you mapped port 80 of that container to 4000, making the correct URL `http://localhost:4000`.
