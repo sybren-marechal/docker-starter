@@ -166,30 +166,22 @@ docker run sybrenmarechal/thermostat:latest
 If the image isn't available locally on the machine, Docker pulls it from the repository.
 
 ```text
-$ docker run -p 4000:80 john/get-started:part2
-Unable to find image 'john/get-started:part2' locally
-part2: Pulling from john/get-started
-10a267c67f42: Already exists
-f68a39a6a5e4: Already exists
-9beaffc0cf19: Already exists
-3c1fe835fb6b: Already exists
-4c9f1fa8fcb8: Already exists
-ee7d8f576a14: Already exists
-fbccdcced46e: Already exists
-Digest: sha256:0601c866aab2adcc6498200efd0f754037e909e5fd42069adeff72d1e2439068
-Status: Downloaded newer image for john/get-started:part2
- * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+$ docker run sybrenmarechal/thermostat:latest
+Unable to find image 'sybrenmarechal/thermostat:latest' locally
+latest: Pulling from sybrenmarechal/thermostat
+Digest: sha256:7d18e4d997e93e359332b939d599bb06411c6bbb2145d47e8fcd23537ebc34b6
+Status: Downloaded newer image for sybrenmarechal/thermostat:latest
+{
+  "heating": "off",
+  "airco": "on"
+}
+heating: false
+cooling: true
 ```
 
 No matter where `docker run` executes, it pulls your image, along with Python and all the dependencies from `requirements.txt`, and runs your code. It all travels together in a neat little package, and you don't need to install anything on the host machine for Docker to run it.
 
-## Conclusion of part two
-
-That's all for this page. In the next section, we learn how to scale our application by running this container in a **service**.
-
-[Continue to Part 3 &gt;&gt;](https://github.com/sybren-marechal/docker-starter/tree/86015b8f63a88424652425fd3d8071ca18d612a9/part3.md){: class="button outline-btn"}
-
-## Recap and cheat sheet \(optional\)
+## Recap and cheat sheet
 
 Here's [a terminal recording of what was covered on this page](https://asciinema.org/a/blkah0l4ds33tbe06y4vkme6g):
 
@@ -213,4 +205,6 @@ docker tag <image> username/repository:tag  # Tag <image> for upload to registry
 docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
 ```
+
+
 
