@@ -31,9 +31,16 @@ Next we create a directory to hold the application code inside the image, this w
 WORKDIR /usr/src/app
 ```
 
+```text
+COPY Gemfile Gemfile.lock
+./COPY thermostat.gemspec thermostaat_sybren_marechal.gemspec
+```
 
+dzdzzd
 
-
+```text
+RUN bundle install
+```
 
 To bundle your app's source code inside the Docker image, use the `COPY` instruction:
 
