@@ -147,5 +147,76 @@ projectwerk2/frontend       develop             7f0dc08ff15e        13 days ago 
 projectwerk2/listener       latest              f4c0d058cfab        2 weeks ago         753MB
 ```
 
+You can inspect images with `docker inspect <tag or id>.`
 
+{% hint style="info" %}
+`docker-compose` up without the `-d` option can also be used to spin up the services. The services will not be run in the background. Output of any of the containers will be shown in the terminal. Ending the terminal will also stop the containers from running.
+{% endhint %}
+
+Stop the application, either by running `docker-compose down` from within your project directory in the second terminal, or by hitting CTRL+C in the original terminal where you started the app.
+
+```text
+docker-compose down
+```
+
+### Command options overview and help {#command-options-overview-and-help}
+
+You can also see this information by running `docker-compose --help` from the command line.
+
+```text
+Define and run multi-container applications with Docker.
+Usage:
+  docker-compose [-f <arg>...] [options] [COMMAND] [ARGS...]
+  docker-compose -h|--help
+Options:
+  -f, --file FILE             Specify an alternate compose file
+                              (default: docker-compose.yml)
+  -p, --project-name NAME     Specify an alternate project name
+                              (default: directory name)
+  --verbose                   Show more output
+  --log-level LEVEL           Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  --no-ansi                   Do not print ANSI control characters
+  -v, --version               Print version and exit
+  -H, --host HOST             Daemon socket to connect to
+  --tls                       Use TLS; implied by --tlsverify
+  --tlscacert CA_PATH         Trust certs signed only by this CA
+  --tlscert CLIENT_CERT_PATH  Path to TLS certificate file
+  --tlskey TLS_KEY_PATH       Path to TLS key file
+  --tlsverify                 Use TLS and verify the remote
+  --skip-hostname-check       Don't check the daemon's hostname against the
+                              name specified in the client certificate
+  --project-directory PATH    Specify an alternate working directory
+                              (default: the path of the Compose file)
+  --compatibility             If set, Compose will attempt to convert deploy
+                              keys in v3 files to their non-Swarm equivalent
+Commands:
+  build              Build or rebuild services
+  bundle             Generate a Docker bundle from the Compose file
+  config             Validate and view the Compose file
+  create             Create services
+  down               Stop and remove containers, networks, images, and volumes
+  events             Receive real time events from containers
+  exec               Execute a command in a running container
+  help               Get help on a command
+  images             List images
+  kill               Kill containers
+  logs               View output from containers
+  pause              Pause services
+  port               Print the public port for a port binding
+  ps                 List containers
+  pull               Pull service images
+  push               Push service images
+  restart            Restart services
+  rm                 Remove stopped containers
+  run                Run a one-off command
+  scale              Set number of containers for a service
+  start              Start services
+  stop               Stop services
+  top                Display the running processes
+  unpause            Unpause services
+  up                 Create and start containers
+  version            Show the Docker-Compose version information
+```
+
+You can use Docker Compose binary, `docker-compose [-f <arg>...] [options] [COMMAND] [ARGS...]`, to build and manage multiple services in Docker containers.
 
