@@ -2,7 +2,7 @@
 
 ## I saw a typo?
 
-clic on the 
+click on the **`edit on github`** button, and feel free to fork the repository and refactor.
 
 ## Have you had a chance to answer the previous question?
 
