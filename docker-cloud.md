@@ -1,22 +1,14 @@
 # Docker Cloud
 
-![](.gitbook/assets/screen-shot-2018-05-17-at-17.32.39.png)
+> ## Login
+>
+> [https://id.docker.com/login](https://id.docker.com/login)
 
-## Connecting docker with git
+![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LCUhmBI5V3OpgXnhnQp%2F-LCi8ZRSNQvAx99Dtv4b%2F-LCiA-gfHTCnOnJ27x_s%2FScreen%20Shot%202018-05-14%20at%2023.21.44.png?alt=media&token=96ed5402-0d37-4881-9297-f8cb303ec94e)
 
-Go to you settings, click on **Cloud Settings** and add your GitHub account
+## Docker cloud {#docker-cloud}
 
-![](.gitbook/assets/screen-shot-2018-05-17-at-17.49.48.png)
-
-If you are connected you can go back to your **repository** and go to **builds** and **Link to Github.**
-
-![](.gitbook/assets/screen-shot-2018-05-18-at-11.47.17.png)
-
-## Docker organizations
-
-Docker Hub [organizations](https://hub.docker.com/organizations/) let you create teams so you can give colleagues access to shared image repositories. A Docker cloud organization can contain public and private repositories just like a user account. Access to push or pull for these repositories is allocated by defining teams of users and then assigning team rights to specific repositories. Repository creation is limited to users in the organization owner’s group.
-
-![](.gitbook/assets/screen-shot-2018-05-18-at-12.00.20.png)
+![welcome to docker cloud](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LCUhmBI5V3OpgXnhnQp%2F-LCi8ZRSNQvAx99Dtv4b%2F-LCi9_EC64vLzpFqdtnH%2FScreen%20Shot%202018-05-17%20at%2014.53.50.png?alt=media&token=44b6cd3e-eac5-4a00-847b-fd1af9ffbf6a)
 
 ## Share your image
 
@@ -132,6 +124,34 @@ docker tag <image> username/repository:tag  # Tag <image> for upload to registry
 docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
 ```
+
+## Connecting docker with git
+
+Go to you settings, click on **Cloud Settings** and add your GitHub account
+
+![](.gitbook/assets/screen-shot-2018-05-17-at-17.49.48.png)
+
+If you are connected you can go back to your **repository** and go to **builds** and **Link to Github.**
+
+![](.gitbook/assets/screen-shot-2018-05-18-at-11.47.17.png)
+
+Automated Builds have several advantages:
+
+* Images built in this way are built exactly as specified.
+* The `Dockerfile` is available to anyone with access to your Docker Hub repository.
+* Your repository is kept up-to-date with code changes automatically.
+
+Automated Builds are supported for both public and private repositories on both [GitHub](http://github.com/) and [Bitbucket](https://bitbucket.org/). This document guides you through the process of working with automated builds.  
+  
+
+
+## Docker organizations
+
+Docker Hub [organizations](https://hub.docker.com/organizations/) let you create teams so you can give colleagues access to shared image repositories. A Docker cloud organization can contain public and private repositories just like a user account. Access to push or pull for these repositories is allocated by defining teams of users and then assigning team rights to specific repositories. Repository creation is limited to users in the organization owner’s group.
+
+![](.gitbook/assets/screen-shot-2018-05-18-at-12.00.20.png)
+
+
 
 
 
