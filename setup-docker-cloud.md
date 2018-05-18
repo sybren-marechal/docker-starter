@@ -159,6 +159,13 @@ Stop the application, either by running `docker-compose down` from within your p
 docker-compose down
 ```
 
+```text
+Stopping smart-campus-docker-compose_backend_1    ... done
+Stopping smart-campus-docker-compose_listener_1   ... done
+Stopping smart-campus-docker-compose_frontend_1   ... done
+Stopping smart-campus-docker-compose_database_1   ... done
+```
+
 ### Command options overview and help {#command-options-overview-and-help}
 
 You can also see this information by running `docker-compose --help` from the command line.
