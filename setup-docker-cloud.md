@@ -10,6 +10,15 @@ For this project we will use an example of VIVES Projectwerk.
 git clone https://github.com/Projectwerk2-2018/smart-campus-docker-compose.git
 ```
 
+```text
+$ git clone https://github.com/Projectwerk2-2018/smart-campus-docker-compose.git
+Cloning into 'smart-campus-docker-compose'...
+remote: Counting objects: 61, done.
+remote: Compressing objects: 100% (40/40), done.
+remote: Total 61 (delta 30), reused 45 (delta 18), pack-reused 0
+Unpacking objects: 100% (61/61), done.
+```
+
 clone the project end go to the `docker-compose.yml` file.
 
 ```text
@@ -113,4 +122,32 @@ TTN_ACCESSKEY=
 {% endcode-tabs %}
 
 ## build your project. 
+
+go the `smart-campus-docker-compose` file and open a **terminal**. 
+
+```text
+docker-compose up
+```
+
+```text
+Starting smart-campus-docker-compose_listener_1 ... done
+Starting smart-campus-docker-compose_frontend_1   ... done
+Starting smart-campus-docker-compose_database_1   ... done
+Starting smart-campus-docker-compose_backend_1  ... done
+```
+
+now your docker containers are **up and running** on your **localhost** or the ip addr Docker gave you with startup
+
+```text
+$ docker image ls
+REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+projectwerk2/backend        latest              f96bad065a1c        5 hours ago         448MB
+mariadb                     latest              2cbeee8bd9cf        9 days ago          399MB
+projectwerk2/frontend       develop             7f0dc08ff15e        13 days ago         933MB
+ruby                        2.5                 fb664b54b956        13 days ago         863MB
+projectwerk2/listener       latest              f4c0d058cfab        2 weeks ago         753MB
+
+```
+
+
 
