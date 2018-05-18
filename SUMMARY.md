@@ -6,7 +6,7 @@
 * [Dockerfile](dockerfile.md)
 * [Containers](containers.md)
 * [Docker Cloud](docker-cloud.md)
-* [setup Docker Cloud](setup-docker-cloud.md)
+* [Docker-compose](setup-docker-cloud.md)
 * [sources](sources.md)
 * docker-compose
 

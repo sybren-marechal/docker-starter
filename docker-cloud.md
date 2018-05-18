@@ -141,9 +141,7 @@ Automated Builds have several advantages:
 * The `Dockerfile` is available to anyone with access to your Docker Hub repository.
 * Your repository is kept up-to-date with code changes automatically.
 
-Automated Builds are supported for both public and private repositories on both [GitHub](http://github.com/) and [Bitbucket](https://bitbucket.org/). This document guides you through the process of working with automated builds.  
-  
-
+Automated Builds are supported for both public and private repositories on both [GitHub](http://github.com/) and [Bitbucket](https://bitbucket.org/). This document guides you through the process of working with automated builds.
 
 ## Docker organizations
 
