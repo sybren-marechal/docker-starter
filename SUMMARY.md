@@ -8,5 +8,4 @@
 * [Docker Cloud](docker-cloud.md)
 * [Docker-compose](setup-docker-cloud.md)
 * [sources](sources.md)
-* docker-compose
 
