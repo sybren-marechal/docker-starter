@@ -144,9 +144,7 @@ REPOSITORY                  TAG                 IMAGE ID            CREATED     
 projectwerk2/backend        latest              f96bad065a1c        5 hours ago         448MB
 mariadb                     latest              2cbeee8bd9cf        9 days ago          399MB
 projectwerk2/frontend       develop             7f0dc08ff15e        13 days ago         933MB
-ruby                        2.5                 fb664b54b956        13 days ago         863MB
 projectwerk2/listener       latest              f4c0d058cfab        2 weeks ago         753MB
-
 ```
 
 
