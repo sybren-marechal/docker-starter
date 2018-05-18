@@ -16,11 +16,39 @@ touch Dockerfile
 
 Open the `Dockerfile` in your favorite text editor
 
+copy paste the next frase in your `Dockerfile`
+
+{% code-tabs %}
+{% code-tabs-item title="Dockerfile" %}
+```text
+FROM ruby:2.5
+# throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config --global frozen 1
+WORKDIR /usr/src/app
+COPY Gemfile Gemfile.lock ./
+COPY thermostat.gemspec thermostaat_sybren_marechal.gemspec
+RUN bundle install
+COPY . .
+CMD ["ruby", "application.rb","23","C"]
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+The above example `Dockerfile` expects a `Gemfile.lock` in your app directory. This `docker run` will help you generate one. Run it in the root of your app, next to the `Gemfile`:
+
+```text
+docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.5 bundle install
+```
+
 The first thing we need to do is define from what image we want to build from. Here we will use the  version `2.5` of `ruby` available from the [Docker Hub](https://hub.docker.com/):
 
 ```text
 FROM ruby:2.5
 ```
+
+![](.gitbook/assets/screen-shot-2018-05-18-at-16.55.45.png)
+
+Ruby 2.5 is the current slim version. Ruby slim does not contain the common packages contained in the default tag and only contains the minimal packages needed to run `ruby`. 
 
 Next we create a directory to hold the application code inside the image, this will be the working directory for your application:
 
@@ -58,24 +86,6 @@ Last but not least, define the command to run your app using `CMD` which defines
 ```text
    CMD ["ruby", "application.rb","23","C"]
 ```
-
-Your `Dockerfile` should now look like this:
-
-{% code-tabs %}
-{% code-tabs-item title="Dockerfile" %}
-```text
-FROM ruby:2.5
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-WORKDIR /usr/src/app
-COPY Gemfile Gemfile.lock ./
-COPY thermostat.gemspec thermostaat_sybren_marechal.gemspec
-RUN bundle install
-COPY . .
-CMD ["ruby", "application.rb","23","C"]
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ## dockerfiles
 
