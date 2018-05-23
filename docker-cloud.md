@@ -2,7 +2,7 @@
 
 > ## Login
 >
-> [https://id.docker.com/login](https://id.docker.com/login)
+> [https://id.cloud.docker.com/login](https://id.docker.com/login)
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LCUhmBI5V3OpgXnhnQp%2F-LCi8ZRSNQvAx99Dtv4b%2F-LCiA-gfHTCnOnJ27x_s%2FScreen%20Shot%202018-05-14%20at%2023.21.44.png?alt=media&token=96ed5402-0d37-4881-9297-f8cb303ec94e)
 
