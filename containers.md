@@ -88,7 +88,7 @@ docker run thermostat ruby application.rb 9 C
 you can open you bash even in the thermostat project with
 
 ```text
-docker run thermostat bash
+docker run thermostat -it bash
 ```
 
 
